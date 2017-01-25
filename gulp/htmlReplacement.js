@@ -30,8 +30,7 @@ module.exports = {
 					.pipe(htmlreplace({
 						"js": [
 						    "bower_components/jquery/dist/jquery.min.js",
-						    "bower_components/bootstrap/dist/js/bootstrap.min.js",
-						    "bower_components/bootstrap/dist/js/bootstrap-theme.min.js"
+						    "bower_components/bootstrap/dist/js/bootstrap.min.js"
 						]/*,
 						"css": [
 							"bower_components/bootstrap/dist/css/bootstrap.min.css"
