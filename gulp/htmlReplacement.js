@@ -13,13 +13,12 @@ module.exports = {
 				gulp.src("app/index.html")
 					.pipe(htmlreplace({
 						"js": [
-							"//qa.relaunch.drklein.hypoport.local/vendor/jquery/dist/jquery.min.js",
-							"//qa.relaunch.drklein.hypoport.local/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js"
-						],
+							"bower_components/jquery/dist/jquery.min.js",
+							"bower_components/bootstrap/dist/js/bootstrap.min.js"
+						]/*,
 						"css": [
-							"//qa.relaunch.drklein.hypoport.local/typo3conf/ext/hypo_custom/Resources/Public/Css/drklein.min.css",
-							"//qa.relaunch.drklein.hypoport.local/typo3conf/ext/hypo_gridelements/Resources/Public/Css/drklein.min.css"
-						]
+							"bower_components/bootstrap/dist/css/bootstrap.min.css"
+						]*/
 					}))
 					.pipe(gulp.dest("dist/"));
 				break;
@@ -30,13 +29,13 @@ module.exports = {
 				gulp.src("app/index.html")
 					.pipe(htmlreplace({
 						"js": [
-							"//dev.relaunch.drklein.hypoport.local/vendor/jquery/dist/jquery.min.js",
-							"//dev.relaunch.drklein.hypoport.local/vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js"
-						],
+						    "bower_components/jquery/dist/jquery.min.js",
+						    "bower_components/bootstrap/dist/js/bootstrap.min.js",
+						    "bower_components/bootstrap/dist/js/bootstrap-theme.min.js"
+						]/*,
 						"css": [
-							"//dev.relaunch.drklein.hypoport.local/typo3conf/ext/hypo_custom/Resources/Public/Css/drklein.min.css",
-							"//dev.relaunch.drklein.hypoport.local/typo3conf/ext/hypo_gridelements/Resources/Public/Css/drklein.min.css"
-						]
+							"bower_components/bootstrap/dist/css/bootstrap.min.css"
+						]*/
 					}))
 					.pipe(gulp.dest("dist/"));
 				break;

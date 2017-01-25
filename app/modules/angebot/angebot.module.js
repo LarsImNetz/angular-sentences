@@ -2,4 +2,4 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.angebotModule", []);
+angular.module("sentencesApp.angebotModule", []);

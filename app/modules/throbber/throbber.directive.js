@@ -2,7 +2,7 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.throbberModule")
+angular.module("sentencesApp.throbberModule")
 	.directive("throbber", function () {
 		return {
 			scope: {

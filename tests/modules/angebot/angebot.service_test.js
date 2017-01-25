@@ -2,10 +2,10 @@
 
 "use strict";
 
-describe("bauzinsenrechnerApp.angebotModule", function() {
+describe("sentencesApp.angebotModule", function() {
 
 	beforeEach(function() {
-		module("bauzinsenrechnerApp.angebotModule", function($provide) {
+		module("sentencesApp.angebotModule", function($provide) {
 			$provide.constant("Constants", {
 				restApiRootUrl: "dummy"
 			});

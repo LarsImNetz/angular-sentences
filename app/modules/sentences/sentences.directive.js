@@ -2,8 +2,8 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.bauzinsenrechnerModule")
-	.directive("bauzinsenRechner", function () {
+angular.module("sentencesApp.sentencesModule")
+	.directive("sentencesRechner", function () {
 		return {
 			scope: {
 				/* bauzinsen-rechner tag attributes */
@@ -11,7 +11,7 @@ angular.module("bauzinsenrechnerApp.bauzinsenrechnerModule")
 				objektwert: "@objektwert",
 				darlehensbetrag: "@darlehensbetrag"
 			},
-			templateUrl: "modules/bauzinsenrechner/bauzinsenrechner.html",
+			templateUrl: "modules/sentences/sentences.html",
 			restrict: "E"
 		};
 	});

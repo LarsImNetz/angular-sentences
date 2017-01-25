@@ -36,9 +36,9 @@ var jsSource = [
 	"app/modules/throbber/throbber.controller.js",
 	"app/modules/throbber/throbber.directive.js",
 
-	"app/modules/bauzinsenrechner/bauzinsenrechner.module.js",
-	"app/modules/bauzinsenrechner/bauzinsenrechner.controller.js",
-	"app/modules/bauzinsenrechner/bauzinsenrechner.directive.js",
+	"app/modules/sentences/sentences.module.js",
+	"app/modules/sentences/sentences.controller.js",
+	"app/modules/sentences/sentences.directive.js",
 	"app/modules/app.js"
 ];
 
@@ -143,6 +143,11 @@ gulp.task("copy", ["sass"], function () {
 		"bower_components/angular-route/angular-route.min.js.map",
 		"bower_components/angular-i18n/angular-locale_de.js",
 		"bower_components/angular-i18n/de.js",
+		"bower_components/normalize-css/normalize.css",
+		"bower_components/jquery/dist/jquery.min.js",
+		"bower_components/bootstrap/dist/js/bootstrap.min.js",
+		"bower_components/bootstrap/dist/css/bootstrap.min.css",
+		"bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
 		"modules/**/*.html"
 	], {
 		cwd: "app/**"
@@ -152,7 +157,7 @@ gulp.task("copy", ["sass"], function () {
 
 gulp.task("default", ["clean"], function () {
 	gulp.start("lint");
-	gulp.start("test");
+//	gulp.start("test");
 	gulp.start("js");
 	htmlReplacement.replace(env);
 	gulp.start("copy");

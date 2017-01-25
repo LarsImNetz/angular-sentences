@@ -2,7 +2,7 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.formularModule")
+angular.module("sentencesApp.formularModule")
 
 	.controller("FormularController", [
 		"$scope",
@@ -10,7 +10,7 @@ angular.module("bauzinsenrechnerApp.formularModule")
 		"AngebotRequest",
 		function ($scope, angebotService, AngebotRequest) {
 			$scope.lang = {
-				title: "Willkommen beim Bauzinsenrechner von Dr. Klein!",
+				title: "Willkommen bei Sentences",
 				calculate: "Berechnen",
 				laufzeitTitle: "Laufzeit",
 				monatlicheRateTitle: "monatliche Rate",

@@ -1,9 +1,9 @@
 {
-  "name": "@drklein/bauzinsenrechner-ng",
-  "author": "POLAR-Team@hypoport.de",
+    "name": "sentences-ng",
+  "author": "lars.langhans@gmx.de",
   "private": true,
-  "version": "1.0.0",
-  "description": "Der Bauzinsenrechner für Dr. Klein",
+  "version": "0.1.0",
+  "description": "angularJS Sentences",
   "license": "",
   "devDependencies": {
     "bower": "^1.7.7",

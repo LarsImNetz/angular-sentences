@@ -2,7 +2,7 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.angebotModule")
+angular.module("sentencesApp.angebotModule")
 	.factory("AngebotRequest", function () {
 
 		function AngebotRequest() {

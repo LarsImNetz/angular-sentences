@@ -2,4 +2,4 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.tilgungsplanModule", []);
+angular.module("sentencesApp.tilgungsplanModule", []);

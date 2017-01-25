@@ -2,9 +2,9 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.bauzinsenrechnerModule")
+angular.module("sentencesApp.sentencesModule")
 
-	.controller("bauzinsenrechnerController", [
+	.controller("sentencesController", [
 		"$scope",
 		"angebotService",
 		"AngebotRequest",

@@ -1,7 +1,7 @@
-<div ng-controller="bauzinsenrechnerController">
+<div ng-controller="sentencesController">
 
-	<div class="content-row">
-		<div class="width-column-tablet-50 width-column-phone-100">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
 			<!-- Laufzeit -->
 			<label for="laufzeit">Laufzeit: <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit">
 				Jahre</label>
@@ -9,8 +9,8 @@
 		</div>
 	</div>
 
-	<div class="content-row">
-		<div class="width-column-tablet-50 width-column-phone-100">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
 			<!-- monatliche Rate -->
 			<p>
 				<label for="monatlicheRate">Monatliche Rate:</label>
@@ -20,17 +20,17 @@
 		</div>
 	</div>
 
-	<div class="content-row">
-		<div class="width-column-tablet-50 width-column-phone-100">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
 			<!-- Darlehensbetrag -->
 			<div class="sliderContainer">
 				<label class="label" for="darlehensbetrag">Darlehensbetrag:</label>
-				<div class="content-row">
-					<div class="width-column-tablet-50 width-column-phone-100">
+				<div class="row">
+					<div class="col-sm-6 col-xs-12">
 
 						<input class="slider" type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="darlehensbetrag">
 					</div>
-					<div class="width-column-tablet-50 width-column-phone-100">
+					<div class="col-sm-6 col-xs-12">
 						<input class="inputField" type="text" name="darlehensbetrag" model-format="currencyNoSymbol" ng-model="darlehensbetrag" placeholder="Darlehensbetrag">&nbsp;&euro;<br>
 					</div>
 					<!-- just to demo -->						Darlehensbetrag: {{darlehensbetrag|currency:"&euro;":2}}
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-		<div class="width-column-tablet-50 width-column-phone-100">
+		<div class="col-sm-6 col-xs-12">
 			<!-- Objektwert -->
 			<p>
 				<label for="objektwert">Objektwert:</label>
@@ -52,9 +52,9 @@
 		</div>
 	</div>
 
-	<!-- content-row -->
-	<div class="content-row">
-		<div class="width-column-tablet-100 width-column-phone-100">
+	<!-- row -->
+	<div class="row">
+		<div class="col-sm-12 col-xs-12">
 			<!-- Berechnen Button -->
 			<button ng-click="submitAction()">Berechnen</button>
 			<button ng-click="getPdf()">PDF erstellen</button>

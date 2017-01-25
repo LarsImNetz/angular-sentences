@@ -3,12 +3,12 @@
 "use strict";
 
 // Declare app level module which depends on views, and components
-angular.module("bauzinsenrechnerApp", [
+angular.module("sentencesApp", [
 	"ngRoute",
 	"ngmodel.format",
-	"bauzinsenrechnerApp.throbberModule",
-	"bauzinsenrechnerApp.bauzinsenrechnerModule",
-	"bauzinsenrechnerApp.constantsModule"
+	"sentencesApp.throbberModule",
+	"sentencesApp.sentencesModule",
+	"sentencesApp.constantsModule"
 ])
 	.config([
 		"$locationProvider",

@@ -30,7 +30,7 @@ module.exports = {
 			constantsObjString = constantsObjString.substring(0, constantsObjString.length - 1);
 			constantsObjString += "\n}";
 
-			codeString = "angular.module(\"bauzinsenrechnerApp.constantsModule\", []).constant(\"Constants\", " + constantsObjString + ");";
+			codeString = "angular.module(\"sentencesApp.constantsModule\", []).constant(\"Constants\", " + constantsObjString + ");";
 
 			return file("constants.js", codeString, {
 				src: true

@@ -2,9 +2,9 @@
 
 "use strict";
 
-angular.module("bauzinsenrechnerApp.formularModule", [
+angular.module("sentencesApp.formularModule", [
 	"ngRoute",
-	"bauzinsenrechnerApp.angebotModule"
+	"sentencesApp.angebotModule"
 ])
 	.config([
 		"$routeProvider",

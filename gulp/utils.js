@@ -9,8 +9,8 @@ var uglify = require("gulp-uglify");
 module.exports = {
 	getJavaScriptFilename: function () {
 		return gutil.env.env === "local"
-			? "bauzinsenrechner.js"
-			: "bauzinsenrechner.min.js";
+			? "sentences.js"
+			: "sentences.min.js";
 	},
 
 	uglifyInQaAndProduction: function () {
