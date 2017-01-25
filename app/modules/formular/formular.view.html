@@ -1,0 +1,78 @@
+<div ng-controller="FormularController">
+	<div class="formularOverlay" ng-class="{'formularOverlay--is-dimmed': isCalculating}"></div>
+	<div class="content-row">
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<p>{{lang.title}}</p>
+			<hr>
+		</div>
+	</div>
+	<div class="content-row">
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<!-- Laufzeit -->
+			<p><label for="laufzeit">{{lang.laufzeitTitle}}:
+				<input type="number" name="laufzeit" id="laufzeit" ng-model="angebotRequest.finanzierung.laufzeit" placeholder="{{lang.laufzeitTitle}}">
+				{{lang.jahre}}</label>
+			</p>
+			<hr>
+		</div>
+	</div>
+
+	<div class="content-row">
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<!-- monatliche Rate -->
+			<p>
+				<label for="monatlicheRate">{{lang.monatlicheRateTitle}}:</label>
+				<input type="text" name="monatlicheRate" id="monatlicheRate" model-format="currencyNoSymbol" ng-model="angebotRequest.finanzierung.monatlicheRate" placeholder="{{lang.monatlicheRateTitle}}">&nbsp;&euro;
+			</p>
+			<hr>
+		</div>
+	</div>
+
+	<div class="content-row">
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<!-- Darlehensbetrag -->
+			<p>
+			<div class="sliderContainer">
+				<label class="label" for="darlehensbetrag">{{lang.darlehensbetragTitle}}:</label>
+				<div class="content-row">
+					<div class="width-column-tablet-50 width-column-phone-100">
+
+						<input class="slider" type="range" name="slider" min="50000" max="1000000" step="500" ng-model="angebotRequest.finanzierung.darlehensbetrag">
+					</div>
+					<div class="width-column-tablet-50 width-column-phone-100">
+						<input class="inputField" type="text" name="darlehensbetrag" id="darlehensbetrag" model-format="currencyNoSymbol" ng-model="angebotRequest.finanzierung.darlehensbetrag" placeholder="{{lang.darlehensbetragTitle}}">&nbsp;&euro;<br>
+					</div>
+					<!-- just to demo -->						Darlehensbetrag: {{angebotRequest.finanzierung.darlehensbetrag|currency:"&euro;":2}}
+				</div>
+				<hr>
+			</div>
+			</p>
+		</div>
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<!-- Objektwert -->
+			<p>
+				<label for="objektwert">{{lang.objektwertTitle}}:</label>
+			<div>
+				<input type="range" name="slider" min="50000" max="1000000" step="500" ng-model="angebotRequest.immobilie.kaufPreis">
+				<input type="text" name="objektwert" id="objektwert" model-format="currencyNoSymbol" ng-model="angebotRequest.immobilie.kaufPreis" placeholder="{{lang.objektwertTitle}}">&nbsp;&euro;
+			</div>
+			</p>
+			<hr>
+		</div>
+	</div>
+	<!-- content-row -->
+	<div class="content-row">
+		<div class="width-column-desktop-50 width-column-tablet-50 width-column-phone-100">
+			<!-- Berechnen Button -->
+			<button ng-click="calculate()">{{lang.calculate}}</button>
+		</div>
+		<div ng-show="isCalculating" class="formularSpinner">
+			<div class="formularSpinnerBounce"></div>
+			<div class="formularSpinnerBounce"></div>
+			<div class="formularSpinnerBounce"></div>
+		</div>
+		<p ng-if="!error && !isCalculating && result">{{lang.result}}: {{result}}</p>
+		<p ng-if="error && !isCalculating">{{error.message}}</p>
+	</div>
+	<!-- content-row -->
+</div><!-- FormularController -->

@@ -1,0 +1,11 @@
+/* app css stylesheet */
+@import "formular/_formular";
+@import "throbber/_throbber";
+@import "bauzinsenrechner/_bauzinsenrechner";
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
