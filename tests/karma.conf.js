@@ -3,55 +3,55 @@
 "use strict";
 
 module.exports = function (config) {
-	config.set({
+    config.set({
 
-		basePath: "../",
+        basePath: "../",
 
-		files: [
-			"app/bower_components/angular/angular.js",
-			"app/bower_components/angular-route/angular-route.js",
-			"app/bower_components/angular-mocks/angular-mocks.js",
-			"app/modules/**/*.js",
-			"tests/**/*.js"
-		],
+        files: [
+            "app/bower_components/angular/angular.js",
+            "app/bower_components/angular-route/angular-route.js",
+            "app/bower_components/angular-mocks/angular-mocks.js",
+            "app/modules/**/*.js",
+            "tests/**/*.js"
+        ],
 
-		autoWatch: true,
+        autoWatch: true,
 
-		frameworks: [
-			"jasmine",
-			"angular-filesort"
-		],
+        frameworks: [
+            "jasmine",
+            "angular-filesort"
+        ],
 
-		browsers: ["PhantomJS"],
+        browsers: ["PhantomJS"],
 
-		plugins: [
-			"karma-chrome-launcher",
-			"karma-phantomjs-launcher",
-			"karma-jasmine",
-			"karma-coverage",
-			"karma-angular-filesort"
-		],
+        plugins: [
+            "karma-chrome-launcher",
+            "karma-phantomjs-launcher",
+            "karma-jasmine",
+            "karma-coverage",
+            "karma-angular-filesort"
+        ],
 
-		angularFilesort: {
-			whitelist: [
-				"app/modules/**/*.js"
-			]
-		},
+        angularFilesort: {
+            whitelist: [
+                "app/modules/**/*.js"
+            ]
+        },
 
-		preprocessors: {
-			"app/modules/**/*.js": "coverage"
-		},
+        preprocessors: {
+            "app/modules/**/*.js": "coverage"
+        },
 
-		reporters: [
-			"progress",
-			"coverage"
-		],
+        reporters: [
+            "progress",
+            "coverage"
+        ],
 
-		coverageReporter: {
-			type: "lcovonly",
-			dir: "tests/coverage",
-			subdir: "report"
-		}
+        coverageReporter: {
+            type: "lcovonly",
+            dir: "tests/coverage",
+            subdir: "report"
+        }
 
-	});
+    });
 };

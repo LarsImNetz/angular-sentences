@@ -7,15 +7,15 @@ var gutil = require("gulp-util");
 var uglify = require("gulp-uglify");
 
 module.exports = {
-	getJavaScriptFilename: function () {
-		return gutil.env.env === "local"
-			? "sentences.js"
-			: "sentences.min.js";
-	},
+    getJavaScriptFilename: function () {
+        return gutil.env.env === "local"
+            ? "sentences.js"
+            : "sentences.min.js";
+    },
 
-	uglifyInQaAndProduction: function () {
-		return gutil.env.env === "qa" || gutil.env.env === "production"
-			? uglify()
-			: gutil.noop();
-	}
+    uglifyInQaAndProduction: function () {
+        return gutil.env.env === "qa" || gutil.env.env === "production"
+            ? uglify()
+            : gutil.noop();
+    }
 };

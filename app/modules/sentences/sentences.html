@@ -1,70 +1,70 @@
 <div ng-controller="sentencesController">
 
-	<div class="row">
-		<div class="col-sm-6 col-xs-12">
-			<!-- Laufzeit -->
-			<label for="laufzeit">Laufzeit: <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit">
-				Jahre</label>
-			<hr>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <!-- Laufzeit -->
+            <label for="laufzeit">Laufzeit:
+                <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit"> Jahre</label>
+            <hr>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-sm-6 col-xs-12">
-			<!-- monatliche Rate -->
-			<p>
-				<label for="monatlicheRate">Monatliche Rate:</label>
-				<input type="text" name="monatlicheRate" model-format="currencyNoSymbol" ng-model="monatlicheRate" placeholder="monatliche Rate">&nbsp;&euro;
-			</p>
-			<hr>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <!-- monatliche Rate -->
+            <p>
+                <label for="monatlicheRate">Monatliche Rate:</label>
+                <input type="text" name="monatlicheRate" model-format="currencyNoSymbol" ng-model="monatlicheRate" placeholder="monatliche Rate">&nbsp;&euro;
+            </p>
+            <hr>
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="col-sm-6 col-xs-12">
-			<!-- Darlehensbetrag -->
-			<div class="sliderContainer">
-				<label class="label" for="darlehensbetrag">Darlehensbetrag:</label>
-				<div class="row">
-					<div class="col-sm-6 col-xs-12">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <!-- Darlehensbetrag -->
+            <div class="sliderContainer">
+                <label class="label" for="darlehensbetrag">Darlehensbetrag:</label>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
 
-						<input class="slider" type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="darlehensbetrag">
-					</div>
-					<div class="col-sm-6 col-xs-12">
-						<input class="inputField" type="text" name="darlehensbetrag" model-format="currencyNoSymbol" ng-model="darlehensbetrag" placeholder="Darlehensbetrag">&nbsp;&euro;<br>
-					</div>
-					<!-- just to demo -->						Darlehensbetrag: {{darlehensbetrag|currency:"&euro;":2}}
-				</div>
-				<hr>
-			</div>
-		</div>
+                        <input class="slider" type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="darlehensbetrag">
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <input class="inputField" type="text" name="darlehensbetrag" model-format="currencyNoSymbol" ng-model="darlehensbetrag" placeholder="Darlehensbetrag">&nbsp;&euro;<br>
+                    </div>
+                    <!-- just to demo -->                        Darlehensbetrag: {{darlehensbetrag|currency:"&euro;":2}}
+                </div>
+                <hr>
+            </div>
+        </div>
 
-		<div class="col-sm-6 col-xs-12">
-			<!-- Objektwert -->
-			<p>
-				<label for="objektwert">Objektwert:</label>
-			<div>
-				<input type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="objektwert">
-				<input type="text" name="objektwert" model-format="currencyNoSymbol" ng-model="objektwert" placeholder="Objektwert">&nbsp;&euro;
-			</div>
-			</p>
-			<hr>
-		</div>
-	</div>
+        <div class="col-sm-6 col-xs-12">
+            <!-- Objektwert -->
+            <p>
+                <label for="objektwert">Objektwert:</label>
+            <div>
+                <input type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="objektwert">
+                <input type="text" name="objektwert" model-format="currencyNoSymbol" ng-model="objektwert" placeholder="Objektwert">&nbsp;&euro;
+            </div>
+            </p>
+            <hr>
+        </div>
+    </div>
 
-	<!-- row -->
-	<div class="row">
-		<div class="col-sm-12 col-xs-12">
-			<!-- Berechnen Button -->
-			<button ng-click="submitAction()">Berechnen</button>
-			<button ng-click="getPdf()">PDF erstellen</button>
+    <!-- row -->
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <!-- Berechnen Button -->
+            <button ng-click="submitAction()">Berechnen</button>
+            <button ng-click="getPdf()">PDF erstellen</button>
 
-			<p ng-if="!error && result">Effektivzins: {{result}}</p>
-			<p ng-if="error">{{error.message}}</p>
+            <p ng-if="!error && result">Effektivzins: {{result}}</p>
+            <p ng-if="error">{{error.message}}</p>
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<throbber active="active"></throbber>
+    <throbber active="active"></throbber>
 
 </div>

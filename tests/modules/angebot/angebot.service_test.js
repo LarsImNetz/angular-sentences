@@ -2,29 +2,32 @@
 
 "use strict";
 
-describe("sentencesApp.angebotModule", function() {
+describe("sentencesApp.angebotModule", function () {
 
-	beforeEach(function() {
-		module("sentencesApp.angebotModule", function($provide) {
-			$provide.constant("Constants", {
-				restApiRootUrl: "dummy"
-			});
-		});
-	});
+    beforeEach(function () {
+        module("sentencesApp.angebotModule", function ($provide) {
+            $provide.constant("Constants", {
+                restApiRootUrl: "dummy"
+            });
+        });
+    });
 
-	var angebotService = null;
+    var angebotService = null;
 
-	beforeEach(inject(function(_angebotService_) {
-		angebotService = _angebotService_;
-	}));
+    beforeEach(inject(function (_angebotService_) {
+        angebotService = _angebotService_;
+    }));
 
-	it("should exist", function () {
-		expect(angebotService).toBeDefined();
-	});
+    it("should exist", function () {
+        expect(angebotService)
+            .toBeDefined();
+    });
 
-	it("should implement API methods", function() {
-		expect(angebotService.getAngebot).toBeDefined();
-		expect(angebotService.getTilgungsplan).toBeDefined();
-	});
+    it("should implement API methods", function () {
+        expect(angebotService.getAngebot)
+            .toBeDefined();
+        expect(angebotService.getTilgungsplan)
+            .toBeDefined();
+    });
 
 });
