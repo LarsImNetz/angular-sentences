@@ -6,9 +6,9 @@ angular.module("sentencesApp.sentencesModule")
 
     .controller("sentencesController", [
         "$scope",
-        "angebotService",
-        "AngebotRequest",
-        function ($scope, angebotService, AngebotRequest) {
+        "requestService",
+        "TextRequest",
+        function ($scope, requestService, TextRequest) {
             $scope.active = false;
 
             var showThrobber = function () {
@@ -19,7 +19,7 @@ angular.module("sentencesApp.sentencesModule")
                 $scope.active = false;
             };
 
-            $scope.angebotRequest = new AngebotRequest();
+            $scope.textRequest = new TextRequest();
 
             $scope.result = "";
             $scope.error = null;
@@ -31,9 +31,9 @@ angular.module("sentencesApp.sentencesModule")
             };
 
             function prepareAngebotRequest() {
-                $scope.angebotRequest.immobilie.kaufPreis = $scope.sentenceMethod;
-                $scope.angebotRequest.finanzierung.darlehensbetrag = $scope.sentence;
-                $scope.angebotRequest.finanzierung.laufzeit = $scope.laufzeit;
+                $scope.textRequest.immobilie.kaufPreis = $scope.sentenceMethod;
+                $scope.textRequest.finanzierung.darlehensbetrag = $scope.sentence;
+                $scope.textRequest.finanzierung.laufzeit = $scope.laufzeit;
             }
 
             $scope.submitAction = function () {
@@ -41,7 +41,7 @@ angular.module("sentencesApp.sentencesModule")
                 $scope.error = null;
                 prepareAngebotRequest();
 
-                angebotService.getAngebot($scope.angebotRequest)
+                requestService.getAngebot($scope.textRequest)
                     .then(function (response) {
                         $scope.result = response.effektivZins;
                         hideThrobber();

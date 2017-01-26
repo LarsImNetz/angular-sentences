@@ -2,10 +2,10 @@
 
 "use strict";
 
-angular.module("sentencesApp.angebotModule")
-	.factory("AngebotRequest", function () {
+angular.module("sentencesApp.requestModule")
+	.factory("TextRequest", function () {
 
-		function AngebotRequest() {
+		function TextRequest() {
 			this.immobilie = {
 				kaufPreis: 352000,
 				postleitzahl: null
@@ -22,13 +22,13 @@ angular.module("sentencesApp.angebotModule")
 			};
 		}
 
-		AngebotRequest.prototype.getImmobilie = function () {
+		TextRequest.prototype.getImmobilie = function () {
 			return this.immobilie;
 		};
 
-		AngebotRequest.prototype.getFinanzierung = function () {
+		TextRequest.prototype.getFinanzierung = function () {
 			return this.finanzierung;
 		};
 
-		return AngebotRequest;
+		return TextRequest;
 	});

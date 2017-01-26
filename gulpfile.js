@@ -18,14 +18,15 @@ var utils = require("./gulp/utils");
 var sonar = require("./gulp/sonar");
 var constants = require("./gulp/constants");
 var env = gutil.env.env || "local";
+
 var jsSource = [
     "dist/temp/constants.js",
 
     "app/external-modules/formatter/ngmodel.format.js",
 
-    "app/modules/angebot/angebot.module.js",
+    "app/modules/angebot/request.module.js",
     "app/modules/angebot/angebot.request.model.js",
-    "app/modules/angebot/angebot.service.js",
+    "app/modules/angebot/request.service.js",
 
     "app/modules/formular/formular.module.js",
     "app/modules/formular/formular.controller.js",
@@ -158,7 +159,7 @@ gulp.task("copy", ["sass"], function () {
 
 gulp.task("default", ["clean"], function () {
     gulp.start("lint");
-//	gulp.start("test");
+	// gulp.start("test");
     gulp.start("js");
     htmlReplacement.replace(env);
     gulp.start("copy");

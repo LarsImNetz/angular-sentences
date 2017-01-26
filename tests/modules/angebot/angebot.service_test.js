@@ -2,31 +2,31 @@
 
 "use strict";
 
-describe("sentencesApp.angebotModule", function () {
+describe("sentencesApp.requestModule", function () {
 
     beforeEach(function () {
-        module("sentencesApp.angebotModule", function ($provide) {
+        module("sentencesApp.requestModule", function ($provide) {
             $provide.constant("Constants", {
                 restApiRootUrl: "dummy"
             });
         });
     });
 
-    var angebotService = null;
+    var requestService = null;
 
-    beforeEach(inject(function (_angebotService_) {
-        angebotService = _angebotService_;
+    beforeEach(inject(function (_requestService_) {
+        requestService = _requestService_;
     }));
 
     it("should exist", function () {
-        expect(angebotService)
+        expect(requestService)
             .toBeDefined();
     });
 
     it("should implement API methods", function () {
-        expect(angebotService.getAngebot)
+        expect(requestService.getAngebot)
             .toBeDefined();
-        expect(angebotService.getTilgungsplan)
+        expect(requestService.getTilgungsplan)
             .toBeDefined();
     });
 
