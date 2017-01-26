@@ -1,14 +1,23 @@
-.sliderContainer {
-    .slider {
-        width: 100%;
-    }
-    .label {
-        font-weight: bold;
-    }
-    .inputField {
-        text-align: right;
-        padding-right: 3px;
-        line-height: 30px;
-    }
-}
+.sentences {
+    border: 1px solid green;
+    margin: 10px;
+    padding: 10px;
 
+    .sliderContainer {
+        .slider {
+            width: 100%;
+        }
+        .label {
+            font-weight: bold;
+        }
+        .inputField {
+            text-align: right;
+            padding-right: 3px;
+            line-height: 30px;
+        }
+        .mylabel {
+            font-weight: bold;
+        }
+    }
+
+}

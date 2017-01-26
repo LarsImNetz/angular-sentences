@@ -6,10 +6,10 @@ angular.module("sentencesApp.sentencesModule")
     .directive("sentencesRechner", function () {
         return {
             scope: {
-                /* bauzinsen-rechner tag attributes */
+                /* tag attribute */
                 laufzeit: "@laufzeit",
-                objektwert: "@objektwert",
-                darlehensbetrag: "@darlehensbetrag"
+                sentence: "@sentence",
+                sentenceMethod: "@sentenceMethod"
             },
             templateUrl: "modules/sentences/sentences.html",
             restrict: "E"

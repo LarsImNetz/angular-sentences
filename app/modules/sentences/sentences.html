@@ -1,51 +1,22 @@
-<div ng-controller="sentencesController">
+<div ng-controller="sentencesController" class="sentences">
 
     <div class="row">
         <div class="col-sm-6 col-xs-12">
             <!-- Laufzeit -->
-            <label for="laufzeit">Laufzeit:
-                <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit"> Jahre</label>
+            <label for="laufzeit">Laufzeit:</label>
+            <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit">&nbsp;<label for="laufzeit">Jahre</label>
             <hr>
         </div>
     </div>
 
+    <!-- row -->
     <div class="row">
         <div class="col-sm-6 col-xs-12">
-            <!-- monatliche Rate -->
             <p>
-                <label for="monatlicheRate">Monatliche Rate:</label>
-                <input type="text" name="monatlicheRate" model-format="currencyNoSymbol" ng-model="monatlicheRate" placeholder="monatliche Rate">&nbsp;&euro;
-            </p>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6 col-xs-12">
-            <!-- Darlehensbetrag -->
-            <div class="sliderContainer">
-                <label class="label" for="darlehensbetrag">Darlehensbetrag:</label>
-                <div class="row">
-                    <div class="col-sm-6 col-xs-12">
-
-                        <input class="slider" type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="darlehensbetrag">
-                    </div>
-                    <div class="col-sm-6 col-xs-12">
-                        <input class="inputField" type="text" name="darlehensbetrag" model-format="currencyNoSymbol" ng-model="darlehensbetrag" placeholder="Darlehensbetrag">&nbsp;&euro;<br>
-                    </div>
-                    <!-- just to demo -->                        Darlehensbetrag: {{darlehensbetrag|currency:"&euro;":2}}
-                </div>
-                <hr>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-xs-12">
-            <!-- Objektwert -->
-            <p>
-                <label for="objektwert">Objektwert:</label>
+                <label for="area">Textfeld:</label>
             <div>
-                <input type="range" name="slider" min="50000" max="1000000" step="10000" ng-model="objektwert">
-                <input type="text" name="objektwert" model-format="currencyNoSymbol" ng-model="objektwert" placeholder="Objektwert">&nbsp;&euro;
+                <!-- TODO: klären, wie die cols gesetzt werden könnten -->
+                <textarea rows="4" cols="80" name="sentence" ng-model="sentence" maxlength="5000" placeholder="Hier ihren Satz eintragen"></textarea>
             </div>
             </p>
             <hr>
@@ -54,10 +25,20 @@
 
     <!-- row -->
     <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <label for="area">Manipulationsmethode:</label> <select name="sentenceMethod" ng-model="sentenceMethod">
+            <option value="">---Bitte wählen---</option> <!-- not selected / blank option -->
+            <option value="verdrehen">Wörter im Satz verdrehen</option>
+        </select>
+            <hr>
+        </div>
+    </div>
+
+    <!-- row -->
+    <div class="row">
         <div class="col-sm-12 col-xs-12">
             <!-- Berechnen Button -->
-            <button ng-click="submitAction()">Berechnen</button>
-            <button ng-click="getPdf()">PDF erstellen</button>
+            <button ng-click="submitAction()">Feuer frei</button>
 
             <p ng-if="!error && result">Effektivzins: {{result}}</p>
             <p ng-if="error">{{error.message}}</p>
