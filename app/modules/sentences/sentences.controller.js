@@ -43,7 +43,7 @@ angular.module("sentencesApp.sentencesModule")
 
                 requestService.getAngebot($scope.textRequest)
                     .then(function (response) {
-                        $scope.result = response.effektivZins;
+                        $scope.result = response.text;
                         hideThrobber();
                     }, errorHandler)
                     .catch(errorHandler);

@@ -4,7 +4,7 @@
 
 module.exports.constants = {
     local: {
-        restApiRootUrl: "//localhost:8080/rest-api/tav/"
+        restApiRootUrl: "//localhost:8008/sentences-rest-server/satz/"
 
     },
     qa: {

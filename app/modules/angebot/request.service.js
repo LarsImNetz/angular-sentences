@@ -11,7 +11,7 @@ angular.module("sentencesApp.requestModule")
 			var restApiRootUrl = Constants.restApiRootUrl;
 
 			var restApiUrls = {
-				angebot: restApiRootUrl + "angebot"
+				angebot: restApiRootUrl + "manipulate"
 			};
 
 			function requestError(message, response) {
