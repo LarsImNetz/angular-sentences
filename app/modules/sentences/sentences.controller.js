@@ -30,16 +30,16 @@ angular.module("sentencesApp.sentencesModule")
                 hideThrobber();
             };
 
-            function prepareAngebotRequest() {
-                $scope.textRequest.immobilie.kaufPreis = $scope.sentenceMethod;
-                $scope.textRequest.finanzierung.darlehensbetrag = $scope.sentence;
-                $scope.textRequest.finanzierung.laufzeit = $scope.laufzeit;
+            function prepareTextRequest() {
+                $scope.textRequest.sentence.sentenceMethod = $scope.sentenceMethod;
+                $scope.textRequest.sentence.sentence = $scope.sentence;
+                $scope.textRequest.sentence.laufzeit = $scope.laufzeit;
             }
 
             $scope.submitAction = function () {
                 showThrobber();
                 $scope.error = null;
-                prepareAngebotRequest();
+                prepareTextRequest();
 
                 requestService.getAngebot($scope.textRequest)
                     .then(function (response) {
