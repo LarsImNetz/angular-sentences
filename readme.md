@@ -7,3 +7,5 @@ Bauen
 * npm run build-qa
 * npm run build-local
 
+Bootstrap richtig einbinden...
+* https://github.com/twbs/bootstrap-sass
