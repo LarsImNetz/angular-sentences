@@ -46,7 +46,8 @@
         "test": "node node_modules/gulp-cli/bin/gulp test",
         "clean": "node node_modules/gulp-cli/bin/gulp clean",
         "sonar": "npm install && node node_modules/gulp-cli/bin/gulp sonar",
-        "build": "npm install && node node_modules/gulp-cli/bin/gulp",
+        "build": "npm install && node node_modules/gulp-cli/bin/gulp --env=home",
+        "build-local": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",
         "build-qa": "npm install && node node_modules/gulp-cli/bin/gulp --env=qa",
         "build-production": "npm install && node node_modules/gulp-cli/bin/gulp --env=production"
     }
