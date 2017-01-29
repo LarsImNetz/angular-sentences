@@ -1,22 +1,22 @@
 <div ng-controller="sentencesController" class="sentences">
 
     <div class="row">
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-12 form-group">
             <!-- Laufzeit -->
             <label for="laufzeit">Laufzeit:</label>
-            <input type="text" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit">&nbsp;<label for="laufzeit">Jahre</label>
+            <input type="text" class="form-control" name="laufzeit" ng-model="laufzeit" placeholder="Laufzeit">&nbsp;<label for="laufzeit">Jahre</label>
             <hr>
         </div>
     </div>
 
     <!-- row -->
     <div class="row">
-        <div class="col-sm-6 col-xs-12">
+        <div class="col-sm-6 col-xs-12 form-group">
             <p>
                 <label for="area">Textfeld:</label>
             <div>
                 <!-- TODO: klären, wie die cols gesetzt werden könnten -->
-                <textarea rows="4" cols="80" name="sentence" ng-model="sentence" maxlength="5000" placeholder="Hier ihren Satz eintragen"></textarea>
+                <textarea rows="4" class="form-control" name="sentence" ng-model="sentence" maxlength="5000" placeholder="Hier ihren Satz eintragen"></textarea>
             </div>
             </p>
             <hr>
@@ -25,8 +25,9 @@
 
     <!-- row -->
     <div class="row">
-        <div class="col-sm-6 col-xs-12">
-            <label for="area">Manipulationsmethode:</label> <select name="sentenceMethod" ng-model="sentenceMethod">
+        <div class="col-sm-6 col-xs-12 form-group">
+            <label for="area">Manipulationsmethode:</label> <select name="sentenceMethod"
+            class="form-control" ng-model="sentenceMethod">
             <option value="">---Bitte wählen---</option> <!-- not selected / blank option -->
             <option value="verdrehen">Wörter im Satz verdrehen</option>
         </select>
@@ -36,9 +37,9 @@
 
     <!-- row -->
     <div class="row">
-        <div class="col-sm-12 col-xs-12">
+        <div class="col-sm-6 col-xs-12">
             <!-- Berechnen Button -->
-            <button ng-click="submitAction()">Feuer frei</button>
+            <button type="button" class="btn btn-primary btn-block" ng-click="submitAction()">Feuer frei</button>
 
             <p ng-if="!error && result">Antwort: {{result}}</p>
             <p ng-if="error">{{error.message}}</p>
