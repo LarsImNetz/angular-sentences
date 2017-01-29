@@ -8,7 +8,7 @@ var gulp = require("gulp");
 var del = require("del");
 var concat = require("gulp-concat");
 var eslint = require("gulp-eslint");
-var Server = require("karma").Server;
+var TestServer = require("karma").Server;
 var sass = require("gulp-sass");
 var gutil = require("gulp-util");
 var browserSync = require("browser-sync")
@@ -27,12 +27,6 @@ var jsSource = [
     "app/modules/angebot/request.module.js",
     "app/modules/angebot/angebot.request.model.js",
     "app/modules/angebot/request.service.js",
-
-    "app/modules/formular/formular.module.js",
-    "app/modules/formular/formular.controller.js",
-
-    "app/modules/tilgungsplan/tilgungsplan.module.js",
-    "app/modules/tilgungsplan/tilgungsplan.service.js",
 
     "app/modules/throbber/throbber.module.js",
     "app/modules/throbber/throbber.controller.js",
@@ -106,7 +100,7 @@ gulp.task("lint", function () {
 });
 
 gulp.task("test", function (done) {
-    new Server({
+    new TestServer({
         configFile: __dirname + "/tests/karma.conf.js",
         singleRun: true,
         browsers: ["PhantomJS"]
@@ -114,7 +108,7 @@ gulp.task("test", function (done) {
 });
 
 gulp.task("test:watch", function (done) {
-    new Server({
+    new TestServer({
         configFile: __dirname + "/tests/karma.conf.js",
         singleRun: false,
         browsers: ["Chrome"]
@@ -131,7 +125,9 @@ gulp.task("clean", function () {
 gulp.task("sass", function () {
     return gulp.src("app/modules/**/*.scss")
         .pipe(sass({
+/*
             outputStyle: "compressed"
+*/
         })
             .on("error", sass.logError))
         .pipe(gulp.dest("dist/css"));

@@ -28,24 +28,30 @@
         "karma-angular-filesort": "^1.0.2",
         "karma-chrome-launcher": "^0.2.3",
         "karma-coverage": "^1.1.1",
-        "karma-jasmine": "^0.3.8",
-        "karma-phantomjs-launcher": "1.0.0"
+        "karma-jasmine": "^1.0.2",
+        "karma-phantomjs-launcher": "^1.0.0"
     },
     "minimatch": "^3.0.3",
-    "phantomjs-prebuilt": "^2.1.13",
+    "phantomjs-prebuild": "^2.1.14",
     "scripts": {
         "postinstall": "node node_modules/bower/bin/bower install",
+
         "update-deps": "npm update",
         "postupdate-deps": "node node_modules/bower/bin/bower update",
+
         "start": "node node_modules/gulp-cli/bin/gulp serve",
         "lint": "node node_modules/gulp-cli/bin/gulp lint",
+
         "sass": "node node_modules/gulp-cli/bin/gulp sass",
         "sass:watch": "node node_modules/gulp-cli/bin/gulp sass:watch",
+
         "pretest": "npm install",
         "test:watch": "node node_modules/gulp-cli/bin/gulp test:watch",
         "test": "node node_modules/gulp-cli/bin/gulp test",
+
         "clean": "node node_modules/gulp-cli/bin/gulp clean",
         "sonar": "npm install && node node_modules/gulp-cli/bin/gulp sonar",
+
         "build": "echo 'ERROR, use build-home|build-local instead' && exit 1",
         "build-home": "npm install && node node_modules/gulp-cli/bin/gulp --env=home",
         "build-local": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",

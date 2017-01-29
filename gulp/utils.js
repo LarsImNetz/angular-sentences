@@ -8,7 +8,7 @@ var uglify = require("gulp-uglify");
 
 module.exports = {
     getJavaScriptFilename: function () {
-        return gutil.env.env === "local"
+        return (gutil.env.env === "local" || gutil.env.env === "home")
             ? "sentences.js"
             : "sentences.min.js";
     },
