@@ -11,7 +11,8 @@ angular.module("sentencesApp.requestModule")
 			var restApiRootUrl = Constants.restApiRootUrl;
 
 			var restApiUrls = {
-				angebot: restApiRootUrl + "manipulate"
+				angebot: restApiRootUrl + "manipulate",
+				select: restApiRootUrl + "select"
 			};
 
 			function requestError(message, response) {
@@ -48,6 +49,13 @@ angular.module("sentencesApp.requestModule")
 						data: textRequest
 					})
 						.then(responseSuccess, responseError);
+				},
+
+				getSelect: function () {
+					return $http({
+                        method: "GET",
+                        url: restApiUrls.select
+					}).then(responseSuccess, responseError);
 				},
 
 				getTilgungsplan: function () {

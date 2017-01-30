@@ -7,7 +7,7 @@ module.exports.constants = {
         restApiRootUrl: "//localhost:8008/sentences-rest-server/satz/"
     },
     local: {
-        restApiRootUrl: "//localhost:8008/sentences-rest-server/satz/"
+        restApiRootUrl: "//localhost:8080/sentences-rest-server/satz/"
     },
     qa: {
         restApiRootUrl: "//qa.relaunch.drklein.hypoport.local/rest-api/tav/"
