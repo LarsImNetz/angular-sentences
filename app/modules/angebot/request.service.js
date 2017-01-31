@@ -36,9 +36,13 @@ angular.module("sentencesApp.requestModule")
 				throw requestError("Selectabfrage fehlgeschlagen", response);
 			}
 
-			function responseError(response) {
-				throw requestError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.", response);
-			}
+            function responseError(response) {
+                throw requestError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.", response);
+            }
+
+            function responseSelectError(response) {
+                throw requestError("Server nicht erreichbar.", response);
+            }
 
 			var requestServiceInstance = {
 
@@ -58,7 +62,7 @@ angular.module("sentencesApp.requestModule")
 					return $http({
                         method: "GET",
                         url: restApiUrls.select
-					}).then(responseSelectSuccess, responseError);
+					}).then(responseSelectSuccess, responseSelectError);
 				},
 
 				getTilgungsplan: function () {
