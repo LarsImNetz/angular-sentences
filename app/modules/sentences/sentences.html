@@ -24,13 +24,13 @@
     </div>
 
     <!-- row -->
+    <!-- http://stackoverflow.com/questions/13047923/working-with-select-using-angulars-ng-options -->
     <div class="row">
         <div class="col-sm-6 col-xs-12 form-group">
-            <label for="area">Manipulationsmethode:</label> <select name="sentenceMethod"
-            class="form-control" ng-model="sentenceMethod">
-            <option value="">---Bitte wählen---</option> <!-- not selected / blank option -->
-            <option value="verdrehen">Wörter im Satz verdrehen</option>
-        </select>
+            <label for="area">Manipulationsmethode:</label>
+            <select name="sentenceMethod" ng-options="item as item.name for item in items" class="form-control" ng-model="sentenceMethod" >
+                <option value="" ng-if="!sentenceMethod">--- Bitte wählen ---</option>
+            </select>
             <hr>
         </div>
     </div>
