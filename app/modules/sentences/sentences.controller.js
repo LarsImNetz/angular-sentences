@@ -37,9 +37,15 @@ angular.module("sentencesApp.sentencesModule")
                 }, errorHandler)
                 .catch(errorHandler);
 
+            function getSentenceMethod() {
+                if ($scope.sentenceMethod === undefined) {
+                    return "";
+                }
+                return $scope.sentenceMethod.id;
+            }
             function prepareTextRequest() {
                 // TODO: wenn nichts gewählt, geht es noch nicht!
-                $scope.textRequest.sentence.sentenceMethod = $scope.sentenceMethod.id;
+                $scope.textRequest.sentence.sentenceMethod = getSentenceMethod();
                 $scope.textRequest.sentence.sentence = $scope.sentence;
                 $scope.textRequest.sentence.laufzeit = $scope.laufzeit;
             }
