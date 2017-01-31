@@ -29,25 +29,22 @@ angular.module("sentencesApp.sentencesModule")
                 $scope.error = error;
                 hideThrobber();
             };
-/*
-            $scope.items = [{
-                    ID: "verdrehen",
-                    name: "Buchstaben im Satz verdrehen"
-                }];
-*/
 
-            requestService.getSelect()
+            // füllen der Select/Optionen
+            requestService.getManipulationMethods()
                 .then(function (response) {
                     $scope.items = response;
                 }, errorHandler)
                 .catch(errorHandler);
 
             function prepareTextRequest() {
+                // TODO: wenn nichts gewählt, geht es noch nicht!
                 $scope.textRequest.sentence.sentenceMethod = $scope.sentenceMethod.id;
                 $scope.textRequest.sentence.sentence = $scope.sentence;
                 $scope.textRequest.sentence.laufzeit = $scope.laufzeit;
             }
 
+            // button Feuer Frei
             $scope.submitAction = function () {
                 showThrobber();
                 $scope.error = null;

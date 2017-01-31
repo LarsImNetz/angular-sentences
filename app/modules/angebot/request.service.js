@@ -23,14 +23,10 @@ angular.module("sentencesApp.requestModule")
 			}
 
 			function responseSuccess(response) {
-				switch (response.status) {
-					case 200:
-						return response.data;
-
-					default:
-					case 204:
-						throw requestError("Mit Ihren Angaben kann leider kein Angebot ermittelt werden.", response);
-				}
+				if (200 === response.status) {
+                    return response.data;
+                }
+				throw requestError("Mit Ihren Angaben kann leider kein Angebot ermittelt werden.", response);
 			}
 
 			function responseSelectSuccess(response) {
@@ -58,7 +54,7 @@ angular.module("sentencesApp.requestModule")
 						.then(responseSuccess, responseError);
 				},
 
-				getSelect: function () {
+				getManipulationMethods: function () {
 					return $http({
                         method: "GET",
                         url: restApiUrls.select
@@ -68,7 +64,6 @@ angular.module("sentencesApp.requestModule")
 				getTilgungsplan: function () {
 
 				}
-
 			};
 
 			return requestServiceInstance;
