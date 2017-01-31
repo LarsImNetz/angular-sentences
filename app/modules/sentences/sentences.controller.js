@@ -30,12 +30,18 @@ angular.module("sentencesApp.sentencesModule")
                 hideThrobber();
             };
 
+            $scope.items = [{
+                    ID: "verdrehen",
+                    name: "Buchstaben im Satz verdrehen"
+                }];
+
+/*
             requestService.getSelect()
                 .then(function (response) {
                     $scope.select = response.algorithms[0];
                 }, errorHandler)
                 .catch(errorHandler);
-
+*/
             function prepareTextRequest() {
                 $scope.textRequest.sentence.sentenceMethod = $scope.sentenceMethod;
                 $scope.textRequest.sentence.sentence = $scope.sentence;
