@@ -23,15 +23,15 @@ angular.module("sentencesApp.requestModule")
 			}
 
 			function responseSuccess(response) {
-				if (200 === response.status) {
+				if (response.status === 200) {
                     return response.data;
                 }
 				throw requestError("Mit Ihren Angaben kann leider kein Angebot ermittelt werden.", response);
 			}
 
 			function responseSelectSuccess(response) {
-                if (200 === response.status) {
-    				return response.data;
+                if (response.status === 200) {
+                    return response.data;
 				}
 				throw requestError("Selectabfrage fehlgeschlagen", response);
 			}
