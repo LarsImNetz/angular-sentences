@@ -33,6 +33,13 @@ angular.module("sentencesApp.requestModule")
 				}
 			}
 
+			function responseSelectSuccess(response) {
+                if (200 === response.status) {
+    				return response.data;
+				}
+				throw requestError("Selectabfrage fehlgeschlagen", response);
+			}
+
 			function responseError(response) {
 				throw requestError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.", response);
 			}
@@ -55,7 +62,7 @@ angular.module("sentencesApp.requestModule")
 					return $http({
                         method: "GET",
                         url: restApiUrls.select
-					}).then(responseSuccess, responseError);
+					}).then(responseSelectSuccess, responseError);
 				},
 
 				getTilgungsplan: function () {
