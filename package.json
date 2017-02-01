@@ -40,6 +40,7 @@
         "postupdate-deps": "node node_modules/bower/bin/bower update",
 
         "start": "node node_modules/gulp-cli/bin/gulp serve",
+        "start-home": "node node_modules/gulp-cli/bin/gulp serve --env=home",
         "lint": "node node_modules/gulp-cli/bin/gulp lint",
 
         "sass": "node node_modules/gulp-cli/bin/gulp sass",

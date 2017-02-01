@@ -7,12 +7,14 @@ var gutil = require("gulp-util");
 var uglify = require("gulp-uglify");
 
 module.exports = {
-    getJavaScriptFilename: function () {
-        return (gutil.env.env === "local" || gutil.env.env === "home")
-            ? "sentences.js"
-            : "sentences.min.js";
+    getJavaScriptFilename: function() {
+        return "sentences.min.js";
     },
-
+    sassCompressInQaAndProduction: function () {
+        return (gutil.env.env === "local" || gutil.env.env === "home")
+            ? {}
+            : {outputStyle: "compressed"};
+    },
     uglifyInQaAndProduction: function () {
         return gutil.env.env === "qa" || gutil.env.env === "production"
             ? uglify()

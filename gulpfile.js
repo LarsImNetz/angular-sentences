@@ -46,7 +46,7 @@ gulp.task("js", ["constants"], function () {
         .pipe(utils.uglifyInQaAndProduction())
         .pipe(gulp.dest("dist/js"))
         .on("end", function () {
-            del(["dist/temp"]);
+            // del(["dist/temp"]);
         });
 });
 
@@ -124,11 +124,7 @@ gulp.task("clean", function () {
 
 gulp.task("sass", function () {
     return gulp.src("app/modules/**/*.scss")
-        .pipe(sass({
-/*
-            outputStyle: "compressed"
-*/
-        })
+        .pipe(sass(utils.sassCompressInQaAndProduction())
             .on("error", sass.logError))
         .pipe(gulp.dest("dist/css"));
 });
