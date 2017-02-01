@@ -41,8 +41,14 @@
             <!-- Berechnen Button -->
             <button type="button" class="btn btn-primary btn-block" ng-click="submitAction()">Feuer frei</button>
 
-            <p ng-if="!error && result">Antwort: {{result}}</p>
-            <p ng-if="error">{{error.message}}</p>
+            <div ng-if="!error && result">
+                <h4>Antwort:</h4>
+                <div class="form-group">
+                    <textarea rows="3" class="form-control" name="result" ng-model="result" readonly></textarea>
+                </div>
+            </div>
+
+            <p ng-if="error" class="sentences_error">ERROR: {{error.message}}</p>
 
         </div>
     </div>
