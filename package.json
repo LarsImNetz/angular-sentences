@@ -39,8 +39,10 @@
         "update-deps": "npm update",
         "postupdate-deps": "node node_modules/bower/bin/bower update",
 
-        "start": "node node_modules/gulp-cli/bin/gulp serve",
+        "start": "node node_modules/gulp-cli/bin/gulp serve --env=local",
         "start-home": "node node_modules/gulp-cli/bin/gulp serve --env=home",
+        "start-moon": "node node_modules/gulp-cli/bin/gulp serve --env=moon",
+
         "lint": "node node_modules/gulp-cli/bin/gulp lint",
 
         "sass": "node node_modules/gulp-cli/bin/gulp sass",
@@ -55,6 +57,7 @@
 
         "build": "echo 'ERROR, use build-home|build-local instead' && exit 1",
         "build-home": "npm install && node node_modules/gulp-cli/bin/gulp --env=home",
+        "build-moon": "npm install && node node_modules/gulp-cli/bin/gulp --env=moon",
         "build-local": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",
         "build-qa": "npm install && node node_modules/gulp-cli/bin/gulp --env=qa",
         "build-production": "npm install && node node_modules/gulp-cli/bin/gulp --env=production"

@@ -6,6 +6,9 @@ module.exports.constants = {
     home: {
         restApiRootUrl: "//localhost:8008/sentences-rest-server/satz/"
     },
+    moon: {
+        restApiRootUrl: "http://moonserver.homenet.org:8080/sentencesrestbeanserver/satz/"
+    },
     local: {
         restApiRootUrl: "//localhost:8080/sentences-rest-server/satz/"
     },
