@@ -6,9 +6,10 @@ angular.module("sentencesApp.sentencesModule")
 
     .controller("sentencesController", [
         "$scope",
+        "$sce",
         "requestService",
         "TextRequest",
-        function ($scope, requestService, TextRequest) {
+        function ($scope, $sce, requestService, TextRequest) {
             $scope.active = false;
 
             var showThrobber = function () {
@@ -58,7 +59,7 @@ angular.module("sentencesApp.sentencesModule")
 
                 requestService.getAngebot($scope.textRequest)
                     .then(function (response) {
-                        $scope.result = response.text;
+                        $scope.result = $sce.trustAsHtml(response.text);
                         hideThrobber();
                     }, errorHandler)
                     .catch(errorHandler);
