@@ -46,6 +46,8 @@
                 <div class="form-group">
                     <textarea rows="3" class="form-control" name="result" ng-model="result" readonly></textarea>
                 </div>
+                <h4>Antwort als Interpretiertes HTML</h4>
+                <div><p ng-bind-html="resultAsHtml"></p></div>
             </div>
 
             <p ng-if="error" class="sentences_error">ERROR: {{error.message}}</p>

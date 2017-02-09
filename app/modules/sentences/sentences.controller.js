@@ -59,7 +59,8 @@ angular.module("sentencesApp.sentencesModule")
 
                 requestService.getAngebot($scope.textRequest)
                     .then(function (response) {
-                        $scope.result = $sce.trustAsHtml(response.text);
+                        $scope.result = response.text;
+                        $scope.resultAsHtml = $sce.trustAsHtml(response.text);
                         hideThrobber();
                     }, errorHandler)
                     .catch(errorHandler);
