@@ -55,11 +55,11 @@
         "clean": "node node_modules/gulp-cli/bin/gulp clean",
         "sonar": "npm install && node node_modules/gulp-cli/bin/gulp sonar",
 
-        "build": "echo 'ERROR, use build-home|build-local instead' && exit 1",
+        "build": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",
         "build-home": "npm install && node node_modules/gulp-cli/bin/gulp --env=home",
         "build-moon": "npm install && node node_modules/gulp-cli/bin/gulp --env=moon",
-        "build-local": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",
         "build-qa": "npm install && node node_modules/gulp-cli/bin/gulp --env=qa",
         "build-production": "npm install && node node_modules/gulp-cli/bin/gulp --env=production"
     }
 }
+
