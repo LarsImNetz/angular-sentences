@@ -133,6 +133,8 @@ gulp.task("copy", ["sass"], function () {
     gulp.src([
         "bower_components/angular/angular.min.js",
         "bower_components/angular/angular.min.js.map",
+        "bower_components/angular-sanitize/angular-sanitize.min.js",
+        "bower_components/angular-sanitize/angular-sanitize.min.js.map",
         "bower_components/angular-route/angular-route.min.js",
         "bower_components/angular-route/angular-route.min.js.map",
         "bower_components/angular-i18n/angular-locale_de.js",
