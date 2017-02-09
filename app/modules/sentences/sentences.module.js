@@ -3,5 +3,6 @@
 "use strict";
 
 angular.module("sentencesApp.sentencesModule", [
-    "sentencesApp.requestModule"
+    "sentencesApp.requestModule",
+    "ngSanitize"
 ]);
