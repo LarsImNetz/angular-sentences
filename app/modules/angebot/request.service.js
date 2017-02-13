@@ -54,8 +54,7 @@ angular.module("sentencesApp.requestModule")
 							"Authorization": "66a517dc66403b664f4299f4f9d04fb3"
 						},
 						data: textRequest
-					})
-						.then(responseSuccess, responseError);
+					}).then(responseSuccess, responseError);
 				},
 
 				getManipulationMethods: function () {
