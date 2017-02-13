@@ -11,12 +11,22 @@ module.exports = {
         return "sentences.min.js";
     },
     sassCompressInQaAndProduction: function () {
-        return (gutil.env.env === "local" || gutil.env.env === "home")
-            ? {}
-            : {outputStyle: "compressed"};
+        var env = gutil.env.env;
+        var isCompressed = function(env) {
+            return (env === "qa" || env === "production");
+        };
+        console.log("###### sass compression " + isCompressed(env) );
+        return isCompressed(env)
+            ? {outputStyle: "compressed"}
+            : {};
     },
     uglifyInQaAndProduction: function () {
-        return gutil.env.env === "qa" || gutil.env.env === "production"
+        var env = gutil.env.env;
+        var isUglify = function(env) {
+            return env === "qa" || env === "production";
+        }
+        console.log("###### JS uglify " + isUglify(env));
+        return isUglify(env)
             ? uglify()
             : gutil.noop();
     }

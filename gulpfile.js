@@ -19,6 +19,9 @@ var sonar = require("./gulp/sonar");
 var constants = require("./gulp/constants");
 var env = gutil.env.env || "local";
 
+console.log("");
+console.log("###### Unser aktuelles Environment: " + env);
+
 var jsSource = [
     "dist/temp/constants.js",
 

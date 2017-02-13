@@ -8,6 +8,8 @@ var htmlreplace = require("gulp-html-replace");
 
 module.exports = {
     replace: function (env) {
+        console.log("###### html replacements für Environment: " + env);
+
         switch (env) {
         case "qa":
             gulp.src("app/index.html")
