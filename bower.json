@@ -6,15 +6,17 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "jquery": "~3.1.1",
+        "jquery": "~3.2.1",
         "bootstrap": "~3.3.7",
         "bootstrap-sass": "~3.3.7",
         "normalize-css": "latest",
-        "jshint": "~2.0.1",
-        "angular": "~1.5.0",
-        "angular-sanitize": "~1.5.0",
-        "angular-route": "~1.5.0",
-        "angular-mocks": "~1.5.0",
-        "angular-i18n": "~1.5.0"
+        "angular": "~1.6.5",
+        "angular-sanitize": "~1.6.5",
+        "angular-route": "~1.6.5",
+        "angular-mocks": "~1.6.5",
+        "angular-i18n": "~1.6.5"
+    },
+    "resolutions": {
+        "angular": "~1.6.5"
     }
 }

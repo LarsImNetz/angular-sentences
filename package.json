@@ -1,65 +1,64 @@
 {
     "name": "sentences-ng",
-    "author": "lars.langhans@gmx.de",
-    "private": true,
     "version": "0.1.0",
     "description": "angularJS Sentences",
-    "license": "",
-    "devDependencies": {
-        "bower": "^1.7.7",
-        "browser-sync": "^2.18.2",
-        "del": "^2.2.2",
-        "graceful-fs": "^4.1.11",
-        "gulp": "^3.9.1",
-        "gulp-cli": "1.2.2",
-        "gulp-concat": "2.6.0",
-        "gulp-eslint": "^3.0.1",
-        "gulp-file": "^0.3.0",
-        "gulp-html-replace": "^1.6.2",
-        "gulp-if": "^2.0.2",
-        "gulp-jshint": "^2.0.0",
-        "gulp-rename": "1.2.2",
-        "gulp-sass": "2.3.1",
-        "gulp-sonar": "3.0.0",
-        "gulp-uglify": "1.5.3",
-        "gulp-util": "^3.0.7",
-        "jasmine-core": "^2.4.1",
-        "karma": "^0.13.22",
-        "karma-angular-filesort": "^1.0.2",
-        "karma-chrome-launcher": "^0.2.3",
-        "karma-coverage": "^1.1.1",
-        "karma-jasmine": "^1.0.2",
-        "karma-phantomjs-launcher": "^1.0.0"
-    },
-    "minimatch": "^3.0.3",
-    "phantomjs-prebuild": "^2.1.14",
+    "private": true,
+    "main": "index.js",
     "scripts": {
         "postinstall": "node node_modules/bower/bin/bower install",
-
+        
         "update-deps": "npm update",
         "postupdate-deps": "node node_modules/bower/bin/bower update",
-
+        
         "start": "node node_modules/gulp-cli/bin/gulp serve --env=local",
         "start-home": "node node_modules/gulp-cli/bin/gulp serve --env=home",
         "start-moon": "node node_modules/gulp-cli/bin/gulp serve --env=moon",
-
+        
         "lint": "node node_modules/gulp-cli/bin/gulp lint",
-
+        
         "sass": "node node_modules/gulp-cli/bin/gulp sass",
         "sass:watch": "node node_modules/gulp-cli/bin/gulp sass:watch",
-
+        
         "pretest": "npm install",
         "test:watch": "node node_modules/gulp-cli/bin/gulp test:watch",
         "test": "node node_modules/gulp-cli/bin/gulp test",
-
+        
         "clean": "node node_modules/gulp-cli/bin/gulp clean",
         "sonar": "npm install && node node_modules/gulp-cli/bin/gulp sonar",
-
+        
         "build": "npm install && node node_modules/gulp-cli/bin/gulp --env=local",
         "build-home": "npm install && node node_modules/gulp-cli/bin/gulp --env=home",
         "build-moon": "npm install && node node_modules/gulp-cli/bin/gulp --env=moon",
         "build-qa": "npm install && node node_modules/gulp-cli/bin/gulp --env=qa",
         "build-production": "npm install && node node_modules/gulp-cli/bin/gulp --env=production"
-    }
+    },
+    "keywords": [],
+    "author": "lars.langhans@gmx.de",
+    "license": "",
+    "devDependencies": {
+        "bower": "^1.8.0",
+        "browser-sync": "^2.18.12",
+        "del": "^3.0.0",
+        "graceful-fs": "^4.1.11",
+        "gulp": "^3.9.1",
+        "gulp-cli": "1.3.0",
+        "gulp-concat": "2.6.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-file": "^0.3.0",
+        "gulp-if": "^2.0.2",
+        "gulp-rename": "1.2.2",
+        "gulp-sass": "3.1.0",
+        "gulp-sonar": "3.0.1",
+        "gulp-uglify": "3.0.0",
+        "gulp-util": "^3.0.8",
+        "jasmine-core": "^2.6.4",
+        "karma": "1.7.0",
+        "karma-angular-filesort": "^1.0.2",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-coverage": "^1.1.1",
+        "karma-jasmine": "^1.1.0",
+        "karma-phantomjs-launcher": "^1.0.4"
+    },
+    "minimatch": "^3.0.4",
+    "phantomjs-prebuild": "^2.1.14"
 }
-
