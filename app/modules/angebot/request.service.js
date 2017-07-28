@@ -5,10 +5,10 @@
 angular.module("sentencesApp.requestModule")
 	.factory("requestService", [
 		"$http",
-		"Constants",
-		function ($http, Constants) {
+		"configuration",
+		function ($http, configuration) {
 
-			var restApiRootUrl = Constants.restApiRootUrl;
+			var restApiRootUrl = configuration.restApiRootUrl;
 
 			var restApiUrls = {
 				angebot: restApiRootUrl + "manipulate",

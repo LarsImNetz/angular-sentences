@@ -6,7 +6,7 @@ describe("sentencesApp.requestModule", function () {
 
     beforeEach(function () {
         module("sentencesApp.requestModule", function ($provide) {
-            $provide.constant("Constants", {
+            $provide.constant("configuration", {
                 restApiRootUrl: "dummy"
             });
         });

@@ -11,50 +11,51 @@ var eslint = require("gulp-eslint");
 var TestServer = require("karma").Server;
 var sass = require("gulp-sass");
 var gutil = require("gulp-util");
-var browserSync = require("browser-sync")
-    .create();
-var htmlReplacement = require("./gulp/htmlReplacement");
+var browserSync = require("browser-sync").create();
 var utils = require("./gulp/utils");
 var sonar = require("./gulp/sonar");
-var constants = require("./gulp/constants");
+
 var env = gutil.env.env || "local";
 
 console.log("");
 console.log("###### Unser aktuelles Environment: " + env);
 
-var jsSource = [
-    "dist/temp/constants.js",
+var files = {
+    markup: [
+        "app/modules/**/*.html",
+        "app/index.html"
+    ],
 
-    "app/external-modules/formatter/ngmodel.format.js",
+    sass: ["app/modules/**/*.scss"],
 
-    "app/modules/angebot/request.module.js",
-    "app/modules/angebot/angebot.request.model.js",
-    "app/modules/angebot/request.service.js",
+    javascript: [
+        "app/modules/configuration/configuration.module.js",
+        "app/modules/configuration/configuration.constants." + env + ".js",
 
-    "app/modules/throbber/throbber.module.js",
-    "app/modules/throbber/throbber.controller.js",
-    "app/modules/throbber/throbber.directive.js",
+        "app/modules/angebot/request.module.js",
+        "app/modules/angebot/angebot.request.model.js",
+        "app/modules/angebot/request.service.js",
 
-    "app/modules/sentences/sentences.module.js",
-    "app/modules/sentences/sentences.controller.js",
-    "app/modules/sentences/sentences.directive.js",
-    "app/modules/app.js"
-];
+        "app/modules/throbber/throbber.module.js",
+        "app/modules/throbber/throbber.controller.js",
+        "app/modules/throbber/throbber.directive.js",
 
-gulp.task("constants", constants.task(env));
+        "app/modules/sentences/sentences.module.js",
+        "app/modules/sentences/sentences.controller.js",
+        "app/modules/sentences/sentences.directive.js",
+        "app/modules/app.js"
+    ]
+};
 
-gulp.task("js", ["constants"], function () {
-    return gulp.src(jsSource, {base: "app"})
+gulp.task("js", function () {
+    return gulp.src(files.javascript, {base: "app"})
         .pipe(concat(utils.getJavaScriptFilename()))
         .pipe(utils.uglifyInQaAndProduction())
-        .pipe(gulp.dest("dist/js"))
-        .on("end", function () {
-            // del(["dist/temp"]);
-        });
+        .pipe(gulp.dest("dist/js"));
 });
 
 gulp.task("html", function () {
-    return gulp.src("app/modules/**/*.html", {base: "app"})
+    return gulp.src(files.markup, {base: "app"})
         .pipe(gulp.dest("dist"));
 });
 
@@ -74,7 +75,7 @@ gulp.task("sass-watch", ["sass"], function (done) {
 });
 
 // use default task to launch Browsersync and watch JavaScript and HTML files
-gulp.task("serve", ["js"], function () {
+gulp.task("serve", ["js", "html", "sass"], function () {
 
     // Serve files from the root of this project
     browserSync.init({
@@ -83,17 +84,16 @@ gulp.task("serve", ["js"], function () {
         }
     });
 
-    gulp.watch("app/modules/**/*.js", ["js-watch"]);
-    gulp.watch("app/external-modules/**/*.js", ["js-watch"]);
+    gulp.watch(files.javascript, ["js-watch"]);
     gulp.watch("tests/modules/**/*.js", ["js-watch"]);
-    gulp.watch("app/modules/**/*.html", ["html-watch"]);
-    gulp.watch("index.html", ["html-watch"]);
-    gulp.watch("app/modules/**/*.scss", ["sass-watch"]);
+    gulp.watch(files.markup, ["html-watch"]);
+    gulp.watch(files.sass, ["sass-watch"]);
 });
 
 gulp.task("lint", function () {
     return gulp.src([
         "app/modules/**/*.js",
+        "app/*.js",
         "tests/**/*.js",
         "gulpfile.js"
     ])
@@ -132,7 +132,7 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("dist/css"));
 });
 
-gulp.task("copy", ["sass"], function () {
+gulp.task("copy", ["js", "html", "sass"], function () {
     gulp.src([
         "bower_components/angular/angular.min.js",
         "bower_components/angular/angular.min.js.map",
@@ -146,8 +146,7 @@ gulp.task("copy", ["sass"], function () {
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/bootstrap/dist/js/bootstrap.min.js",
         "bower_components/bootstrap/dist/css/bootstrap.min.css",
-        "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
-        "modules/**/*.html"
+        "bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
     ], {
         cwd: "app/**"
     })
@@ -157,8 +156,6 @@ gulp.task("copy", ["sass"], function () {
 gulp.task("default", ["clean"], function () {
     gulp.start("lint");
 	// gulp.start("test");
-    gulp.start("js");
-    htmlReplacement.replace(env);
     gulp.start("copy");
 });
 
