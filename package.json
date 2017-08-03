@@ -8,8 +8,8 @@
         "postinstall": "node node_modules/bower/bin/bower install",
         
         "update-deps": "npm update",
-        "postupdate-deps": "node node_modules/bower/bin/bower update",
-        
+        "postupdate-deps": "node node_modules/bower/bin/bower --force update",
+
         "start": "node node_modules/gulp-cli/bin/gulp serve --env=local",
         "start-home": "node node_modules/gulp-cli/bin/gulp serve --env=home",
         "start-moon": "node node_modules/gulp-cli/bin/gulp serve --env=moon",
