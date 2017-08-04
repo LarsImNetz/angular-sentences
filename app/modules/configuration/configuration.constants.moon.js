@@ -4,5 +4,5 @@
 
 angular.module("sentencesApp.configurationModule")
 	.constant("configuration", {
-		restApiRootUrl: "http://moonserver.homenet.org:8080/sentencesrestbeanserver/satz/"
+		restApiRootUrl: "http://moonserver.homeplex.org:8080/sentencesrestbeanserver/satz/"
 	});
